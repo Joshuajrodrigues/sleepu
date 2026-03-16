@@ -1,0 +1,256 @@
+
+
+@font-face {
+  font-family: "Micro 5";
+  src: url("./assets/fonts/Micro5-Regular.ttf");
+}
+
+:root {
+  font-family: "Micro 5", sans-serif;
+  font-size: 32px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --bg-purple: #f3d5ff;
+  --accent-yellow: #fff9a3;
+  --deep-purple: #7b5ea7;
+  --soft-pink: #ffc2e2;
+  --ink-black: #2d2d2d;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents the "bounce" scroll */
+  height: 100%;
+}
+body {
+  background-color: var(--bg-purple);
+  color: var(--ink-black);
+}
+
+.container {
+  margin: 0;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: 3px solid var(--ink-black) !important;
+  border-radius: 12px !important;
+  box-shadow: 4px 4px 0px var(--ink-black); /* Retro shadow */
+  padding: 24px 12px;
+  transition: all 0.1s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--ink-black);
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--ink-black);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #396cd8;
+}
+button:active {
+  border-color: #396cd8;
+  background-color: #e8e8e8;
+}
+
+input,
+button {
+  outline: none;
+}
+.field input {
+  background-color: #ffffff;
+  border: 3px solid var(--ink-black);
+  border-radius: 8px;
+  color: var(--bg-purple);
+  padding: 10px;
+  box-shadow: inset 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.countdown-display {
+  font-size: 80px;
+  color: var(--bg-purple);
+  text-shadow: 3px 3px 0px var(--soft-pink);
+  animation: float 3s ease-in-out infinite;
+}
+.titlebar {
+  background: var(--accent-yellow);
+  border-bottom: 3px solid var(--ink-black);
+  height: 40px; 
+  user-select: none;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index:999;
+}
+.titlebar-drag-region {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Takes up all space except buttons */
+  height: 100%;
+  padding-left: 12px;
+}
+
+.app-title {
+  font-family: "Micro 5", sans-serif;
+  font-size: 24px; /* Since Micro 5 is a pixel font, it needs to be a bit larger */
+  pointer-events: none; /* Allows the drag event to pass through the text to the div below */
+}
+.titlebar > .controls {
+  display: flex;
+  padding-right: 4px;
+}
+.titlebar button {
+  appearance: none;
+  padding: 0;
+  margin: 2px;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  background-color: #f0e76a;
+}
+.titlebar button:hover {
+  background: #eedf12;
+}
+#titlebar-close{
+  background:orange;
+  :hover{
+    background-color:#f0ad6a;
+  }
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.window-wrapper {
+}
+.sleep-gif {
+  width: 100%; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+  
+  /* Important for pixel art GIFs: keeps them crisp! */
+  image-rendering: pixelated; 
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.zzz {
+  position: absolute;
+  font-family: "Micro 5";
+  font-weight: bold;
+  opacity: 0;
+  animation: z-rise 4s infinite;
+}
+
+.z1 { top: 10%; right: 20%; animation-delay: 0s; }
+.z2 { top: 15%; right: 15%; animation-delay: 1.5s; font-size: 0.8em; }
+.z3 { top: 5%; right: 25%; animation-delay: 3s; font-size: 0.6em; }
+
+@keyframes z-rise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(20px, -40px); opacity: 0; }
+}
+.logic-board {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.field input {
+  width: 60px;
+  text-align: center;
+  font-size: 24px;
+  border: 3px solid #000;
+}
+
+.countdown-display {
+  font-size: 64px; /* Big pixel font */
+  margin: 10px 0;
+  color: #000;
+}
+
+.start-btn {
+  background-color: #fff45b;
+  width: 100%;
+  font-weight: bold;
+  border: 3px solid #000;
+}
+
+.cancel-btn {
+  background-color: #ff6b6b;
+  color: white;
+  margin-top:12px;
+  border: 3px solid #000;
+}
