@@ -9,7 +9,7 @@ fn shutdown_system() {
         Command::new("shutdown")
             .args(["/s", "/t", "0"])
             .spawn()
-            .expect("failed to shutdown Windows")
+            .expect("failed to shutdown Windows");
     }
 
     #[cfg(target_os = "linux")]
