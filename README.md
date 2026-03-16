@@ -3,6 +3,8 @@
 A cute little desktop app that shuts down your computer after a timer. 
 Set it, play YouTube, fall asleep. Sleepu handles the rest.
 
+![image](https://github.com/user-attachments/assets/9ff1a99d-5add-4442-84c1-0ea1b93f8dec)
+
 
 ## Download
 
